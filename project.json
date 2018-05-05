@@ -1,0 +1,27 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d", "extensions"],
+
+    "jsList" : [
+        "src/menuLayer.js",
+        "src/resource.js",
+        "src/global.js",
+        "src/backgroundLayer.js",
+        "src/explosion.js",
+        "src/coin.js",
+        "src/mainLayer.js",
+        "src/player.js",
+        "src/item.js",
+        "src/enemy.js",
+        "src/boss.js",
+        "src/enemyLayer.js"
+    ]
+}
