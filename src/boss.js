@@ -129,8 +129,8 @@ var Boss = cc.Sprite.extend({
     shotLaser: function() {
         var laser = new Enemy(res.Rocket_png);
         var pos = this.getPosition();
-        laser.setPosition(cc.p(pos.x, pos.y - this.getContentSize().height / 2));
         enemyLayer.addChild(laser);
+        laser.setPosition(cc.p(pos.x, pos.y - this.getContentSize().height / 2));
         this.shield = true;
     },
 

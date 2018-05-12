@@ -1,63 +1,24 @@
 var MainLayer = cc.Layer.extend({
 	timePlayed: null,
-    //playerHealthy: g_level * 10 + 100,
-    //levelLabel: null,
-    //damage: g_level / 10 + 1,
     hitCount: 0,
     hitLabel: null,
-    //dataBoard: null,
-    //newHealthyBar: null,
     player: null,
 
 	ctor: function() {
         this._super();
 
         screenSize = cc.director.getWinSize();
+
+        this.initPlayer();
+        this.schedule(this.addItem, 3);
+    },
+
+    initPlayer: function () {
         this.player = new Player();
         this.addChild(this.player);
 
         this.createScoreLabel();
-
-        this.schedule(this.addItem, 3);
     },
-
-    /*
-    initDataBoard: function () {
-	    this.dataBoard = new cc.Sprite(res.Board_png);
-	    this.dataBoard.attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: 16,
-            y: 12,
-            opacity: 200
-        });
-	    this.addChild(this.dataBoard, 9);
-
-        this.createLevelLabel();
-        this.createHealthyBar();
-        this.createScoreLabel();
-    },
-
-    createLevelLabel: function () {
-        this.levelLabel = new cc.LabelTTF("Level " + g_level, "Arial", 24);
-        this.levelLabel.x = + this.dataBoard.getContentSize().width / 4;
-        this.levelLabel.y = 90 + 12;
-
-        this.addChild(this.levelLabel, 10);
-    },
-
-    createHealthyBar: function () {
-        this.newHealthyBar = new ccui.LoadingBar();
-        this.newHealthyBar.setName("Healthy");
-        this.newHealthyBar.loadTexture(res.HealthyBar_png);
-        this.newHealthyBar.setPercent(this.playerHealthy);
-        this.newHealthyBar.attr({
-            x: 16 + this.dataBoard.getContentSize().width / 2,
-            y: 47
-        });
-        this.addChild(this.newHealthyBar,9);
-    },
-    */
 
     createScoreLabel: function () {
         this.hitLabel = new cc.LabelTTF(this.hitCount, "Arial", screenSize.width * 0.5);
@@ -84,7 +45,7 @@ var MainLayer = cc.Layer.extend({
                 item = new Item(res.ItemPill_png);
                 break;
         }
-        this.addChild(item, 1);
+        this.addChild(item, 10);
     },
 
     updateHealthyBar: function() {

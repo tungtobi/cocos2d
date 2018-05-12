@@ -2,7 +2,7 @@ var Player = cc.Sprite.extend({
     healthyMax: g_level * 10 + 100,
     healthy: null,
     levelLabel: null,
-    damage: g_level / 10 + 1,
+    damage: g_level / 5 + 1,
     dataBoard: null,
     newHealthyBar: null,
     exp: 0,

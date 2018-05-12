@@ -214,11 +214,10 @@ var Enemy = cc.Sprite.extend({
             layer.player.updateHealthyBar();
         } else {
             layer.updateHitLabel();
+            layer.createExplosion(this.x, this.y);
             layer.createCoin(this.x, this.y);
             layer.player.updateLevel();
         }
-
-        layer.createExplosion(this.x, this.y);
 
         this.removeFromParent();
     },

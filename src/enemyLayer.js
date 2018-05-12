@@ -13,8 +13,6 @@ var EnemyLayer = cc.Layer.extend({
 
         // add new enemy
         this.addEnemyLoop();
-
-
     },
 
     addEnemyLoop: function () {
